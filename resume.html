@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume — Ethan Kalchik</title>
+  <link rel="stylesheet" href="site.css">
+  <style>
+    /* ── Resume layout ─────────────────────────────────────────────────── */
+    .resume-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    /* Full-width blocks */
+    .resume-grid .full { grid-column: 1 / -1; }
+
+    .resume-block {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+
+    .resume-block h3 {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72em;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Education items */
+    .edu-item { margin-bottom: 22px; }
+    .edu-item:last-child { margin-bottom: 0; }
+
+    .edu-item h4 {
+      font-size: 0.925em;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .edu-item .degree {
+      font-size: 0.845em;
+      color: var(--text2);
+      margin-bottom: 2px;
+    }
+
+    .edu-item .date {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72em;
+      color: var(--accent);
+    }
+
+    /* Awards list */
+    .awards-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .awards-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.875em;
+      color: var(--text2);
+    }
+
+    .awards-list li::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+
+    /* Experience timeline */
+    .experience-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .exp-item {
+      display: grid;
+      grid-template-columns: 16px 1fr;
+      gap: 0 16px;
+    }
+
+    /* Timeline line & dot */
+    .exp-line {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .exp-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--bg2);
+      outline: 2px solid var(--accent);
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+
+    .exp-connector {
+      flex: 1;
+      width: 1px;
+      background: var(--border);
+      margin: 4px 0;
+    }
+
+    .exp-item:last-child .exp-connector { display: none; }
+
+    .exp-body { padding-bottom: 24px; }
+    .exp-item:last-child .exp-body { padding-bottom: 0; }
+
+    .exp-meta {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7em;
+      color: var(--text2);
+      margin-bottom: 4px;
+    }
+
+    .exp-title {
+      font-size: 0.925em;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .exp-company {
+      font-size: 0.82em;
+      color: var(--text2);
+      margin-bottom: 10px;
+    }
+
+    .exp-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .exp-bullets li {
+      font-size: 0.845em;
+      color: var(--text2);
+      line-height: 1.5;
+      padding-left: 14px;
+      position: relative;
+    }
+
+    .exp-bullets li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* Skills grid (resume version) */
+    .skills-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skills-chips .skill-chip {
+      padding: 7px 14px;
+      font-size: 0.8em;
+    }
+
+    /* Responsive */
+    @media (max-width: 720px) {
+      .resume-grid { grid-template-columns: 1fr; }
+      .resume-grid .full { grid-column: 1; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────────────────────────────────────── -->
+<nav>
+  <a href="index.html" class="nav-logo">EK</a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="portfolio.html">Visual Portfolio</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="resume.html" class="active">Resume</a></li>
+  </ul>
+</nav>
+
+<!-- ── PAGE BANNER ──────────────────────────────────────────────────────── -->
+<div class="page-banner">
+  <p class="page-banner-label">Experience</p>
+  <h1>Resume</h1>
+  <p>Education, work experience &amp; technical skills</p>
+</div>
+
+<!-- ── RESUME CONTENT ────────────────────────────────────────────────────── -->
+<div class="section-wrap">
+  <div class="resume-grid">
+
+    <!-- Education -->
+    <div class="resume-block">
+      <h3>Education</h3>
+
+      <div class="edu-item">
+        <h4>University of Wisconsin–Madison</h4>
+        <p class="degree">M.S. Cartography &amp; Geographic Information Sciences</p>
+      </div>
+
+      <div class="edu-item">
+        <h4>Michigan State University</h4>
+        <p class="degree">B.S. Geographic Information Sciences</p>
+        <p class="degree">B.S. Economic Geography</p>
+        <p class="degree">GIS Certification Candidate</p>
+      </div>
+    </div>
+
+    <!-- Awards -->
+    <div class="resume-block">
+      <h3>Awards &amp; Activities</h3>
+      <ul class="awards-list">
+        <li>2023 Daniel Jacobson Award Winner</li>
+        <li>Dean's List — 2022, 2023</li>
+        <li>Michigan State University Geography Club</li>
+        <li>University of Wisconsin Geography Club</li>
+      </ul>
+    </div>
+
+    <!-- Work Experience (full width) -->
+    <div class="resume-block full">
+      <h3>Work Experience</h3>
+      <div class="experience-list">
+
+        <div class="exp-item">
+          <div class="exp-line">
+            <div class="exp-dot"></div>
+            <div class="exp-connector"></div>
+          </div>
+          <div class="exp-body">
+            <p class="exp-meta">October 2024 – Present</p>
+            <p class="exp-title">GIS / CAD Technician</p>
+            <p class="exp-company">Bono Consulting Inc &mdash; Aurora, IL</p>
+            <ul class="exp-bullets">
+              <li>Collaborated with civil engineers to create project plan sets, ensuring delivery accuracy and efficiency</li>
+              <li>Assisted field surveyors in maintaining precise topographic surveys across multiple projects</li>
+              <li>Spearheaded the implementation of new software and OUC projects, enhancing operational efficiency</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-line">
+            <div class="exp-dot"></div>
+            <div class="exp-connector"></div>
+          </div>
+          <div class="exp-body">
+            <p class="exp-meta">June 2023 – June 2024</p>
+            <p class="exp-title">GIS Designer I</p>
+            <p class="exp-company">Primera Engineers &mdash; Chicago, IL</p>
+            <ul class="exp-bullets">
+              <li>Facilitated creation, manipulation, and QA/QC of data visualizations in engineering designs</li>
+              <li>Managed project timelines by organizing work by deadline to ensure on-time delivery</li>
+              <li>Communicated effectively with engineers on design aspects, details, and project progress</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-line">
+            <div class="exp-dot"></div>
+            <div class="exp-connector"></div>
+          </div>
+          <div class="exp-body">
+            <p class="exp-meta">April 2022 – August 2022</p>
+            <p class="exp-title">GIS Intern</p>
+            <p class="exp-company">Village of Wilmette &mdash; Wilmette, IL</p>
+            <ul class="exp-bullets">
+              <li>Surveyed geographical aspects of Wilmette using various software, ensuring accurate data entry</li>
+              <li>Created systems to increase efficiency in data collection using available tools</li>
+              <li>Performed spatial analyses ensuring seamless transfer into new technology and software</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Technical Skills (full width) -->
+    <div class="resume-block full">
+      <h3>Technical Skills</h3>
+      <div class="skills-chips">
+        <div class="skill-chip">ArcGIS Pro</div>
+        <div class="skill-chip">QGIS</div>
+        <div class="skill-chip">Leaflet.js</div>
+        <div class="skill-chip">D3.js</div>
+        <div class="skill-chip">Chart.js</div>
+        <div class="skill-chip">Mapbox</div>
+        <div class="skill-chip">Google Earth Engine</div>
+        <div class="skill-chip">JavaScript</div>
+        <div class="skill-chip">Python</div>
+        <div class="skill-chip">R</div>
+        <div class="skill-chip">HTML / CSS</div>
+        <div class="skill-chip">SQL</div>
+        <div class="skill-chip">GitHub</div>
+        <div class="skill-chip">AutoCAD</div>
+        <div class="skill-chip">Adobe Illustrator</div>
+        <div class="skill-chip">Smallworld</div>
+        <div class="skill-chip">Data Analytics</div>
+        <div class="skill-chip">Spatial Analysis</div>
+        <div class="skill-chip">Data Visualization</div>
+        <div class="skill-chip">IDW Interpolation</div>
+        <div class="skill-chip">Regression Analysis</div>
+        <div class="skill-chip">Spatial Databases</div>
+        <div class="skill-chip">Quality Assurance</div>
+        <div class="skill-chip">Project Management</div>
+        <div class="skill-chip">Amazon Web Services (AWS)</div>
+        <div class="skill-chip">Open-Source Development</div>
+        <div class="skill-chip">Artificial Intelligence (AI)</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── FOOTER ────────────────────────────────────────────────────────────── -->
+<footer>Ethan Kalchik &mdash; GIS &amp; Spatial Analytics Portfolio</footer>
+
+</body>
+</html>

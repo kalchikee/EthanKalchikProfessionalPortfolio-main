@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ethan Kalchik — GIS &amp; Spatial Analytics</title>
+  <link rel="stylesheet" href="site.css">
+  <style>
+    /* ── Hero (index-only) ──────────────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: var(--nav-h);
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('assets/img/vmap.jpg') center/cover no-repeat;
+      opacity: 0.07;
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,212,170,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,212,170,0.04) 1px, transparent 1px);
+      background-size: 52px 52px;
+      animation: grid-drift 25s linear infinite;
+    }
+
+    @keyframes grid-drift {
+      0%   { transform: translateY(0); }
+      100% { transform: translateY(52px); }
+    }
+
+    .hero-glow {
+      position: absolute;
+      width: 640px;
+      height: 640px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,212,170,0.09) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 760px;
+      padding: 0 24px;
+    }
+
+    .hero-avatar {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: 50% 22%;
+      border: 3px solid var(--accent);
+      box-shadow: 0 0 0 6px rgba(0,212,170,0.12), 0 20px 60px rgba(0,0,0,0.5);
+      margin-bottom: 28px;
+    }
+
+    .hero-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72em;
+      color: var(--accent);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4em, 7vw, 4.8em);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin-bottom: 18px;
+    }
+
+    .hero-sub {
+      font-size: 1.05em;
+      color: var(--text2);
+      margin-bottom: 40px;
+      line-height: 1.65;
+    }
+
+    .typewriter {
+      color: var(--accent);
+      border-right: 2px solid var(--accent);
+      padding-right: 3px;
+      animation: blink 0.75s step-end infinite;
+    }
+
+    @keyframes blink { 50% { border-color: transparent; } }
+
+    .hero-cta {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      color: var(--text2);
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65em;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.55;
+      animation: bob 2.4s ease-in-out infinite;
+    }
+
+    .scroll-hint::after {
+      content: '';
+      width: 1px;
+      height: 36px;
+      background: linear-gradient(to bottom, var(--text2), transparent);
+    }
+
+    @keyframes bob {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(6px); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────────────────────────────────────── -->
+<nav>
+  <a href="index.html" class="nav-logo">EK</a>
+  <ul>
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="portfolio.html">Visual Portfolio</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="resume.html">Resume</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ─────────────────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+
+  <div class="hero-content">
+    <img src="assets/img/ethan3.png" alt="Ethan Kalchik" class="hero-avatar">
+    <p class="hero-label">GIS &amp; Spatial Analytics</p>
+    <h1>Ethan Kalchik</h1>
+    <p class="hero-sub">
+      Turning geographic data into<br>
+      <span class="typewriter" id="tw"></span>
+    </p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="about.html" class="btn btn-secondary">About Me</a>
+    </div>
+  </div>
+
+  <div class="scroll-hint">Scroll</div>
+</section>
+
+<!-- ── PROJECTS ──────────────────────────────────────────────────────────── -->
+<div id="projects">
+  <div class="section-wrap">
+    <div class="section-header">
+      <span class="section-label">Work</span>
+      <h2>Projects</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="projects-grid">
+
+      <a href="https://freshwater-conflict-intelligence-fw7fau2c6hxb3xrcvvptqk.streamlit.app/" class="project-card" target="_blank" rel="noopener">
+        <div class="project-img-wrap">
+          <img src="assets/img/freshwater.png" alt="Freshwater Conflict Intelligence Platform">
+        </div>
+        <div class="project-body">
+          <div class="tags">
+            <span class="tag t-data">Python</span>
+            <span class="tag t-stats">Random Forest</span>
+            <span class="tag t-gis">Spatial Analysis</span>
+            <span class="tag t-web">Streamlit</span>
+          </div>
+          <h3>Freshwater Conflict Intelligence Platform</h3>
+          <p>Transboundary water stress and geopolitical instability analytics using a Water Stress Conflict Index, Random Forest risk classification, spatial autocorrelation, and SSP climate scenario projections.</p>
+          <span class="card-link">View project</span>
+        </div>
+      </a>
+
+      <a href="https://mexico-destination-suitability-62m22b96avwochwrezd33n.streamlit.app/" class="project-card" target="_blank" rel="noopener">
+        <div class="project-img-wrap">
+          <img src="assets/img/Mexico.png" alt="Mexico Vacation Destination Suitability">
+        </div>
+        <div class="project-body">
+          <div class="tags">
+            <span class="tag t-data">Python</span>
+            <span class="tag t-stats">MCDA</span>
+            <span class="tag t-map">Folium</span>
+            <span class="tag t-web">Streamlit</span>
+          </div>
+          <h3>Mexico Vacation Destination Suitability</h3>
+          <p>Interactive multi-criteria decision analysis tool ranking Mexican destinations by accessibility, climate comfort, safety, and tourism amenities — with customizable traveler profiles and weighted overlays.</p>
+          <span class="card-link">View project</span>
+        </div>
+      </a>
+
+      <a href="https://global-food-security-ews-e8vwwi9m2yvn5nd8nhd64z.streamlit.app/" class="project-card" target="_blank" rel="noopener">
+        <div class="project-img-wrap">
+          <img src="assets/img/global_food.png" alt="Global Food Security Early Warning System">
+        </div>
+        <div class="project-body">
+          <div class="tags">
+            <span class="tag t-data">Python</span>
+            <span class="tag t-stats">ML Forecasting</span>
+            <span class="tag t-gis">Satellite</span>
+            <span class="tag t-map">Streamlit</span>
+          </div>
+          <h3>Global Food Security Early Warning System</h3>
+          <p>Spatiotemporal dashboard forecasting agricultural failure and famine risk using NDVI anomalies, climate stress indices, conflict proximity, and ML-based IPC phase forecasting 6 months ahead.</p>
+          <span class="card-link">View project</span>
+        </div>
+      </a>
+
+      <a href="https://kalchikee.github.io/geospatial/" class="project-card" target="_blank" rel="noopener">
+        <div class="project-img-wrap">
+          <img src="assets/img/ChicagoNDVI.png" alt="Chicago NDVI Monitor">
+        </div>
+        <div class="project-body">
+          <div class="tags">
+            <span class="tag t-gis">Satellite</span>
+            <span class="tag t-data">PostGIS</span>
+            <span class="tag t-map">NDVI</span>
+            <span class="tag t-web">AWS</span>
+          </div>
+          <h3>Chicago NDVI Monitor</h3>
+          <p>Urban vegetation intelligence platform tracking greenspace health across Chicago using Sentinel-2 satellite imagery, PostGIS, and AWS Cloud Optimized GeoTIFFs with time-series analysis and degradation flagging.</p>
+          <span class="card-link">View project</span>
+        </div>
+      </a>
+
+      <a href="Wildfires/" class="project-card">
+        <div class="project-img-wrap">
+          <img src="assets/img/Wildfire.png" alt="Wildfire Risk and Evacuation Planner">
+        </div>
+        <div class="project-body">
+          <div class="tags">
+            <span class="tag t-web">Leaflet</span>
+            <span class="tag t-map">Risk Analysis</span>
+            <span class="tag t-stats">Temporal</span>
+          </div>
+          <h3>Wildfire Risk &amp; Evacuation Planner</h3>
+          <p>Web mapping application for visualizing California wildfire perimeters, modeling fire risk by time of day, and generating dynamic evacuation routes.</p>
+          <span class="card-link">View project</span>
+        </div>
+      </a>
+
+      <a href="Geog%20778/Project/" class="project-card">
+        <div class="project-img-wrap">
+          <img src="assets/img/ILBroadband.png" alt="Illinois Broadband Gap Analysis">
+        </div>
+        <div class="project-body">
+          <div class="tags">
+            <span class="tag t-gis">GIS</span>
+            <span class="tag t-web">Leaflet</span>
+            <span class="tag t-data">Chart.js</span>
+          </div>
+          <h3>Illinois Broadband Gap Analysis</h3>
+          <p>Interactive tool mapping fixed and mobile broadband coverage gaps across Illinois communities, combining Leaflet mapping with dynamic Chart.js analytics.</p>
+          <span class="card-link">View project</span>
+        </div>
+      </a>
+
+      <a href="nitrate_cancer_app.html" class="project-card">
+        <div class="project-img-wrap">
+          <img src="assets/img/Wisconsin-Nitrate.png" alt="Wisconsin Nitrate Cancer Analysis">
+        </div>
+        <div class="project-body">
+          <div class="tags">
+            <span class="tag t-gis">GIS</span>
+            <span class="tag t-stats">Regression</span>
+            <span class="tag t-map">IDW</span>
+          </div>
+          <h3>Wisconsin Nitrate &amp; Cancer Analysis</h3>
+          <p>IDW interpolation and linear regression exploring links between agricultural nitrate contamination and cancer rates across Wisconsin census tracts.</p>
+          <span class="card-link">View project</span>
+        </div>
+      </a>
+
+      <a href="florida.html" class="project-card">
+        <div class="project-img-wrap">
+          <img src="assets/img/Florida-Gated.png" alt="Florida Gated Communities Map">
+        </div>
+        <div class="project-body">
+          <div class="tags">
+            <span class="tag t-web">Leaflet</span>
+            <span class="tag t-map">Interactive Map</span>
+          </div>
+          <h3>Florida Gated Communities Map</h3>
+          <p>Interactive Leaflet map exploring gated communities across Florida with clustering, price-range filtering, and detailed community profiles.</p>
+          <span class="card-link">View project</span>
+        </div>
+      </a>
+
+      <a href="https://storymaps.arcgis.com/stories/37c7733f78b8472ebd9839880ff2a818" class="project-card" target="_blank" rel="noopener">
+        <div class="project-img-wrap">
+          <img src="assets/img/michigan_map.jpg" alt="Michigan State Police Arrests">
+        </div>
+        <div class="project-body">
+          <div class="tags">
+            <span class="tag t-gis">ArcGIS</span>
+            <span class="tag t-map">StoryMap</span>
+          </div>
+          <h3>GEOG 572 Lab 1 &mdash; Michigan Arrests</h3>
+          <p>Choropleth map analyzing Michigan State Police arrest data by county, published as an ArcGIS StoryMap.</p>
+          <span class="card-link">View project</span>
+        </div>
+      </a>
+
+      <a href="https://storymaps.arcgis.com/stories/deced5009721480ba540d0e2948ab23e" class="project-card" target="_blank" rel="noopener">
+        <div class="project-img-wrap">
+          <img src="assets/img/bike.jpg" alt="Chicago Bicycle Tour">
+        </div>
+        <div class="project-body">
+          <div class="tags">
+            <span class="tag t-gis">ArcGIS</span>
+            <span class="tag t-map">StoryMap</span>
+          </div>
+          <h3>GEOG 572 Lab 2 &mdash; Chicago Bike Tour</h3>
+          <p>Interactive bicycle tour story map of Chicago highlighting key routes, landmarks, and cycling infrastructure.</p>
+          <span class="card-link">View project</span>
+        </div>
+      </a>
+
+      <a href="Lab3_ EthanKalchik/" class="project-card">
+        <div class="project-img-wrap">
+          <img src="assets/img/website.jpg" alt="Cubism Perspective Map">
+        </div>
+        <div class="project-body">
+          <div class="tags">
+            <span class="tag t-web">JavaScript</span>
+            <span class="tag t-data">D3.js</span>
+          </div>
+          <h3>GEOG 572 Lab 3 &mdash; Cubism Map</h3>
+          <p>Cubism perspective map built with D3.js to visualize temporal geographic data through an artistic cartographic lens.</p>
+          <span class="card-link">View project</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<!-- ── SKILLS ────────────────────────────────────────────────────────────── -->
+<div class="skills-band">
+  <div class="section-wrap">
+    <div class="section-header">
+      <span class="section-label">Toolkit</span>
+      <h2>Skills</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-chip">Data Analytics</div>
+      <div class="skill-chip">Visualization</div>
+      <div class="skill-chip">Adobe Illustrator</div>
+      <div class="skill-chip">Quantum GIS</div>
+      <div class="skill-chip">Documentation</div>
+      <div class="skill-chip">Data Mapping</div>
+      <div class="skill-chip">Quality Assurance</div>
+      <div class="skill-chip">Quality Control</div>
+      <div class="skill-chip">Data Modeling</div>
+      <div class="skill-chip">Spatial Data</div>
+      <div class="skill-chip">Spatial Databases</div>
+      <div class="skill-chip">GIS Applications</div>
+      <div class="skill-chip">Programming</div>
+      <div class="skill-chip">ESRI</div>
+      <div class="skill-chip">Project Management</div>
+      <div class="skill-chip">GIS</div>
+      <div class="skill-chip">AWS</div>
+      <div class="skill-chip">Open-Source Dev</div>
+      <div class="skill-chip">Geospatial Data</div>
+      <div class="skill-chip">AI</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ────────────────────────────────────────────────────────────── -->
+<footer>Ethan Kalchik &mdash; GIS &amp; Spatial Analytics Portfolio</footer>
+
+<script>
+  const phrases = ['interactive web maps.', 'spatial insights.', 'data-driven stories.', 'GIS applications.'];
+  let pi = 0, ci = 0, del = false;
+  const el = document.getElementById('tw');
+
+  function type() {
+    const w = phrases[pi];
+    if (!del) {
+      el.textContent = w.slice(0, ++ci);
+      if (ci === w.length) { del = true; setTimeout(type, 1800); return; }
+    } else {
+      el.textContent = w.slice(0, --ci);
+      if (ci === 0) { del = false; pi = (pi + 1) % phrases.length; }
+    }
+    setTimeout(type, del ? 55 : 95);
+  }
+  type();
+</script>
+
+</body>
+</html>

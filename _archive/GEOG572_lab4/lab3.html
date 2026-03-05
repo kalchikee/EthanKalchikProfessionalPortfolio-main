@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cubism Map - Ethan Kalchik</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="lib/scrollmap.css">
+
+    <style>
+        body {
+            font-family: 'fantasy', sans-serif;
+            background-color: rgb(0, 0, 0);
+        }
+
+        iframe {
+            height: 400px;
+        }
+
+        h1 {
+            font-family: "Oxanium", sans-serif;
+            font-size: 200px;
+            color: white;
+            text-shadow: -1px -1px 0 #000,
+                         1px -1px 0 #000,
+                        -1px 1px 0 #000,
+                         1px 1px 0 #000;
+        }
+
+        ff {
+            font-size: 35px;
+            line-height: 1.6;
+            color: rgb(255, 255, 255);
+            text-shadow: -1px -1px 0 #000,
+                         1px -1px 0 #000,
+                        -1px 1px 0 #000,
+                         1px 1px 0 #000;
+        }
+
+        p {
+            font-size: 25px;
+            line-height: 1.6;
+            color: rgb(255, 255, 255);
+            text-shadow: -1px -1px 0 #000,
+                         1px -1px 0 #000,
+                        -1px 1px 0 #000,
+                         1px 1px 0 #000;
+        }
+
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 100px;
+            }
+
+            ff {
+                font-size: 25px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+
+            .row {
+                padding: 20px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            h1 {
+                font-size: 60px;
+            }
+
+            ff {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+    </style>
+    </head>
+    </head>
+    <head>
+        ...
+        <link href="https://fonts.googleapis.com/css2?family=Oxanium&display=swap" rel="stylesheet">
+      </head>
+      <style>
+        h1 {
+            font-family: "Oxanium", sans-serif;;
+        }
+      </style>
+    <body>
+        <div class="content">
+            <div>
+             <!--title block, background image is title image-->
+            <div class="row" style="background-image:url(N2Title.jpeg); background-size:contain;">
+                <div class="center title">
+                    <!--title text-->
+                    <h1>My Cubism Map</h1>
+                    <!--subtitle or author-->
+                    <ff class="author">Ethan Kalchik</ff>
+                </div>
+            </div>
+            <!--text content block-->
+            <div class="row">
+                <div class="center">
+                    <p>This map reimagines the world as modern art, where place becomes pattern suggesting both unity and chaos in spatial form. artificial 
+                        color palettes with think blocky lines creating a glitchy texture.Embracing cubism’s hallmark of geometric deconstruction, the landscape 
+                        is parsed with diagonal black hatching that crisscrosses the terrain like shattered glass overlaying familiar cartographic colors—lush 
+                        greens for land, deep blues for water—invoking a fractured yet harmonious whole yet also echoing the distortion of 
+                        a traditional perspective of the world. 
+                    </p>
+                </div>
+            </div>
+            <!--side by side text and image-->
+            <div class="row">
+                <div class="left">
+                    <img class="fit" src="inspo.jpeg">
+                </div>
+                <div class="right">
+                    <p class="vert-center">Cubism is a revolutionary art style, focusing on geometry, abstraction, and multiple 
+                        viewpoints. It was pioneered in the early 20th century by Pablo Picasso and Georges Braque. This map makes use of 
+                        artificial color palettes with think blocky lines creating a glitchy texture. 
+                        Roads and pathways intersect rigidly, reinforcing a structured yet almost game-like environment.This Cubsim-style map 
+                        reinterprets an urban landscape through bold geometric abstraction, vibrant color contrasts, and a digital-constructed 
+                        aesthetic. The city is fragmented into simplified planes of green (representing land), blue (water bodies), 
+                        and gray (streets and infrastructure).</p>
+                </div>
+            </div>
+
+            <!--background images with text scrolling over them (sidecar)-->
+            <div class="scroll-container">    
+                <!--background images-->
+                <div class="background-item">
+                    <img src="Chicago.jpeg" data-slide="1" class="fill">
+                    <img src="Cancun.jpeg" data-slide="2" class="fill hidden">
+                    <img src="N macedonia.jpeg" data-slide="3" class="fill hidden">
+                    <img src="MADISON.jpeg" data-slide="4" class="fill hidden">
+                    <img src="nz.jpeg" data-slide="5" class="fill hidden">
+                </div>
+                <!--foreground text blocks-->
+                <div class="foreground-item">
+                    <div class="row">
+                        <div class="center background-transparent rounded">
+                            <p class="no-margin">This is what Chicago, Illinois looks like with this Cubist lens and we can see that we have a zoomed out view of the Chicagoland 
+                                area and we can see that there are many roads in Chicago and we can see there are artificial color and there are think blocky lines creating a glitchy texture to the map. </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="center background-transparent rounded">
+                            <p class="no-margin">This is Cancun, MX reimagined through a Cubist lens, where its tropical landscape is abstracted and transformed into a dynamic, vibrant 
+                                visual experience that turns the familiar into something strikingly new.</p>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="center background-transparent rounded">
+                            <p class="no-margin">This Cubist-style map of this region of Europe reimagines countries with rigid geometric patterns and bold colors, transforming the 
+                                familiar into an abstract composition. The sharp lines and structured forms reflect Cubism’s signature fusion of abstraction and geometry, breaking down 
+                                the landscape into a fragmented yet cohesive visual experience. </p>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="center background-transparent rounded">
+                            <p class="no-margin">This Cubsim map of Madison, WI presents a city with rigid geometry, bold colors making it a perfect example of Cubsim’s fusion of abstraction, geometry
+                                and we can see all of the city’s major features like the lakes, parks, and streets in a new light. The map captures the essence of Madison's urban landscape through a Cubist
+                                lens, where the familiar becomes abstract and the ordinary is transformed into a vibrant visual experience.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="center background-transparent rounded">
+                            <p class="no-margin">This Cubsim map of the harbor in Auckland, New Zealand through a Cubist lens, we can clearly see all of the different buildings while also seeing all of 
+                                the walking paths and the roads that are in the area.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="center-wide">
+                    <!-- Slideshow container -->
+                    <div class="slideshow-container">
+                        <!--slideshow content goes here-->
+                        <div class="slide">
+                            <img src="V-Zoom.jpeg">
+                            <p class="caption">A zoomed-out view with the Cubism style.</p>
+                        </div>
+                        <div class="slide">
+                            <img src="MaMid.jpeg">
+                            <p class="caption">A mid-scale view centered on Madison, Wisconsin.</p>
+                        </div>
+                        <div class="slide">
+                            <img src="Madlar.jpeg">
+                            <p class="caption">A large-scale view of the Madison region.</p>
+                        </div>
+                        <div class="slide">
+                            <img src="Mad-zoom-vlarge.jpeg">
+                            <p class="caption">This is a very large scale view of Madison, WI where we can see the Isthmus, while 
+                                also being able to see all of the red amd white representing the different walking paths, and we can see 
+                                the tetxured light blue lines which are the roads. We can slso see the textured orange which are the different 
+                                buildings that we can see around the Madison Isthmus.
+                            </p>
+                        </div>
+                        
+                        <!-- Next and previous buttons -->
+                        <a class="prev">&#10094;</a>
+                        <a class="next">&#10095;</a>
+
+                        <!-- The dots/circles -->
+                        <div class="slideshow-dots">
+                            <span class="dot" id="1"></span>
+                            <span class="dot" id="2"></span>
+                            <span class="dot" id="3"></span>
+                            <span class="dot" id="4"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="center-wide">
+                    <iframe class="fit" src="https://api.mapbox.com/styles/v1/ethank218/cm8xl1bt3004l01s210he2suk.html?title=view&access_token=pk.REDACTED&zoomwheel=true&fresh=true#2/38/-34"></iframe>
+                </div>
+            </div>
+
+            <!--credits-->
+            <div class="row no-margin">
+                <div class="center">
+                    <div class="credits">
+                        <p><b>Credits:</b></p>
+                        <p>Map created with Mapbox Studio</p>
+                        <p>Data from openstreetmap</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--external scripts-->
+        <script type="text/javascript" src="lib/scrollmap.js"></script>
+    </body>
+</html>

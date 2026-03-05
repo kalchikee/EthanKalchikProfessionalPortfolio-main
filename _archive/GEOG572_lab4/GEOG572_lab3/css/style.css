@@ -1,0 +1,15 @@
+h1 { 
+    color:green;
+    }
+<h1 class="largeTitle">My Page Title</h1>
+img { 
+    height:300px;
+    width:400px;
+    }
+    .largeTitle { 
+        color:blue;
+        font-size:72pt;
+        }
+        .lightGray { 
+            background:rgb(230, 230, 230);
+            }

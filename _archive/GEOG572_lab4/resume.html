@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethan Kalchik - Portfolio</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+          background-image: url('vmap.jpg');
+          background-size: cover;
+           background-position: center;
+          background-repeat: no-repeat;
+           position: relative;
+          padding: 20px;
+      }
+      header::before {
+          content: '';
+       position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+           background-color: rgba(0, 0, 0, 0.5);
+          z-index: 1;
+      }
+      header img {
+      position: relative;
+      z-index: 2;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 8px solid white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      margin-bottom: 30px;
+      }
+  
+  header h1 {
+    position: relative;
+    z-index: 2;
+    color: white;
+    font-size: 3.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin: 0;
+  }
+      nav {
+        background-color: #333;
+        padding: 10px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+  
+      nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+  
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+      }
+      section {
+        padding: 40px;
+      }
+      .projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+      }
+      .card {
+        background-color: #eaeaea;
+        padding: 20px;
+        text-align: center;
+        border: 1px dashed #ccc;
+      }
+      .card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        background-color: #ddd;
+      }
+      .resume-section {
+        background-color: #f9f9f9;
+        padding: 60px 20px;
+      }
+      .resume-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+      .resume-block {
+        background: white;
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      .resume-block h3 {
+        color: #333;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+      }
+      .skills-list, .awards-list {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+      .skills-list li, .awards-list li {
+        background: #f2f2f2;
+        padding: 8px 15px;
+        border-radius: 4px;
+        font-size: 0.9em;
+      }
+      .education-item, .experience-item {
+        margin-bottom: 20px;
+      }
+      .education-item h4, .experience-item h4 {
+        color: #2c3e50;
+        margin: 0 0 10px 0;
+      }
+      .education-item p, .experience-item p {
+        margin: 5px 0;
+        color: #666;
+      }
+      .experience-item ul {
+        list-style-type: disc;
+        margin: 10px 0 0 20px;
+        color: #666;
+      }
+      .experience-item li {
+        margin-bottom: 5px;
+        font-size: 0.9em;
+        line-height: 1.4;
+      }
+      .resume-section h2 {
+        text-align: center;
+        color: #333;
+        font-size: 2.5em;
+       margin-bottom: 40px;
+      }
+
+      @media screen and (max-width: 768px) {
+        .resume-container {
+          grid-template-columns: 1fr;
+          padding: 15px;
+        }
+
+        .resume-block {
+          padding: 20px;
+        }
+
+        nav {
+          padding: 8px;
+        }
+
+        nav a {
+          font-size: 16px;
+        }
+
+        nav ul {
+          gap: 15px;
+        }
+
+        .skills-list, .awards-list {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .resume-section h2 {
+          font-size: 2em;
+          margin-bottom: 30px;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        nav ul {
+          flex-direction: column;
+          align-items: center;
+          padding: 10px 0;
+        }
+
+        .skills-list, .awards-list {
+          grid-template-columns: 1fr;
+        }
+
+        .resume-block {
+          padding: 15px;
+        }
+
+        .experience-item ul {
+          margin-left: 15px;
+        }
+
+        .resume-section {
+          padding: 40px 15px;
+        }
+
+        .resume-section h2 {
+          font-size: 1.8em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="portfolio.html">Visual Portfolio</a></li>
+      <li><a href="about.html">About/Contact</a></li>
+      <li><a href="resume.html">Resume</a></li>
+    </ul>
+  </nav>
+  
+  <section id="resume" class="resume-section">
+    <h2>Resume</h2>
+    <div class="resume-container">
+      <div class="resume-block">
+        <h3>Education</h3>
+        <div class="education-item">
+          <h4>University of Wisconsin-Madison</h4>
+          <p>Master of Science in Cartography and Geographic Information Sciences</p>
+          <p>Expected Graduation: May 2026</p>
+        </div>
+        <div class="education-item">
+          <h4>Michigan State University</h4>
+          <p>Bachelor of Science in Geographic Information Sciences</p>
+          <p>Bachelor of Science in Economic Geography</p>
+          <p>Graduation: May 2023</p>
+          <p>GIS Certification Candidate</p>
+        </div>
+      </div>
+      <div class="resume-block">
+        <h3>Awards & Activities</h3>
+        <ul class="awards-list">
+          <li>2023 Daniel Jacobson Award Winner</li>
+          <li>Dean's List (2022, 2023)</li>
+          <li>Michigan State Univeristy Geography Club Member</li>
+          <li>Univeristy of Wisconsin Geography Club Member</li>
+        </ul>
+      </div>
+      <div class="resume-block">
+        <h3>Work Experience</h3>
+        <div class="experience-item">
+          <h4>GIS/CAD Technician</h4>
+          <p>Bono Consulting Inc – Aurora, IL</p>
+          <p>October 2024 – Present</p>
+          <ul>
+            <li>Collaborated with civil engineers to create project plan sets, ensuring project delivery accuracy and efficiency</li>
+            <li>Assisted Field Surveyors in maintaining precise topographic surveys, contributing to completing various projects</li>
+            <li>Spearheaded the implementation of new software within the company and new OUC projects and enhancing overall operational efficiency and productivity</li>
+          </ul>
+        </div>
+        <div class="experience-item">
+          <h4>GIS Designer I</h4>
+          <p>Primera Engineers – Chicago, IL</p>
+          <p>June 2023 – June 2024</p>
+          <ul>
+            <li>Facilitate the creation and manipulation and QA/QC for data visualization in designs</li>
+            <li>Managed my time on projects by organizing all of my projects by deadline to ensure projects are finished on time</li>
+            <li>Effectively communicate with engineers about aspects and details of designs and the progress of each design</li>
+          </ul>
+        </div>
+        <div class="experience-item">
+          <h4>GIS Intern</h4>
+          <p>Village of Wilmette – Wilmette, IL</p>
+          <p>April 2022 – August 2022</p>
+          <ul>
+            <li>Survey geographical aspects of Wilmette using different software and ensure data was entered correctly</li>
+            <li>Created systems that allowed for more efficiency in collecting data by sufficiently using the tools available</li>
+            <li>Create different analyses of the data that was collected, ensuring ease of transfer into new technology and software</li>
+          </ul>
+        </div>
+      </div>
+      <div class="resume-block">
+        <h3>Technical Skills</h3>
+        <ul class="skills-list">
+          <li>ArcGIS Pro</li>
+          <li>ESRI Storymaps</li>
+          <li>AutoCAD 3D</li>
+          <li>Adobe Illustrator</li>
+          <li>QGIS</li>
+          <li>HTML/CSS</li>
+          <li>Python</li>
+          <li>Mapbox</li>
+          <li>JavaScript</li>
+          <li>Smallworld</li>
+            <li>SQL</li>
+            <li>R</li>
+            <li>GitHub</li>
+            <li>Google Earth Engine</li>
+
+        </ul>
+      </div>
+  
+      
+  
+    </div>
+  </section>
+</body>
+</html>

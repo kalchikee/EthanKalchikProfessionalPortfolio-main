@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Ethan Kalchik</title>
+  <link rel="stylesheet" href="site.css">
+  <style>
+    /* ── About page layout ─────────────────────────────────────────────── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    /* Left column: avatar + quick facts */
+    .profile-col {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .profile-avatar {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      object-position: 50% 35%;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+    }
+
+    .profile-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .profile-card-name {
+      padding: 18px 20px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .profile-card-name h2 {
+      font-size: 1.05em;
+      font-weight: 700;
+    }
+
+    .profile-card-name p {
+      font-size: 0.8em;
+      color: var(--text2);
+      margin-top: 2px;
+    }
+
+    .profile-stat {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 20px;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.82em;
+    }
+
+    .profile-stat:last-child { border-bottom: none; }
+
+    .stat-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .stat-label { color: var(--text2); min-width: 70px; }
+    .stat-value { color: var(--text); font-weight: 500; }
+
+    .profile-stat--degrees { align-items: flex-start; }
+
+    .degree-line {
+      display: block;
+      line-height: 1.7;
+    }
+
+    .degree-tag {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.78em;
+      color: var(--accent);
+      font-weight: 700;
+      margin-right: 4px;
+    }
+
+    /* Right column: bio + contact */
+    .bio-col {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .bio-block {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+
+    .bio-block h3 {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72em;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .bio-block p {
+      font-size: 0.925em;
+      color: var(--text2);
+      line-height: 1.75;
+      margin-bottom: 12px;
+    }
+
+    .bio-block p:last-child { margin-bottom: 0; }
+
+    /* Contact */
+    .contact-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* Responsive */
+    @media (max-width: 760px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .profile-col { position: static; }
+      .profile-avatar { max-width: 200px; border-radius: 50%; }
+      .profile-col { align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────────────────────────────────────── -->
+<nav>
+  <a href="index.html" class="nav-logo">EK</a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="portfolio.html">Visual Portfolio</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="resume.html">Resume</a></li>
+  </ul>
+</nav>
+
+<!-- ── PAGE BANNER ──────────────────────────────────────────────────────── -->
+<div class="page-banner">
+  <p class="page-banner-label">Background</p>
+  <h1>About Me</h1>
+  <p>GIS professional &amp; spatial analyst open to FL, NC &amp; remote roles</p>
+</div>
+
+<!-- ── ABOUT CONTENT ─────────────────────────────────────────────────────── -->
+<div class="section-wrap">
+  <div class="about-grid">
+
+    <!-- Left: profile sidebar -->
+    <div class="profile-col">
+      <img src="assets/img/ethan5.jpg" alt="Ethan Kalchik" class="profile-avatar">
+      <div class="profile-card">
+        <div class="profile-card-name">
+          <h2>Ethan Kalchik</h2>
+          <p>GIS &amp; Cartography</p>
+        </div>
+        <div class="profile-stat">
+          <span class="stat-dot"></span>
+          <span class="stat-label">School</span>
+          <span class="stat-value">UW–Madison &amp; MSU</span>
+        </div>
+        <div class="profile-stat profile-stat--degrees">
+          <span class="stat-dot"></span>
+          <span class="stat-label">Degrees</span>
+          <span class="stat-value">
+            <span class="degree-line"><span class="degree-tag">M.S.</span> Cartography &amp; GIS</span>
+            <span class="degree-line"><span class="degree-tag">B.S.</span> Geographic Information Sciences</span>
+            <span class="degree-line"><span class="degree-tag">B.S.</span> Economic Geography</span>
+          </span>
+        </div>
+        <div class="profile-stat">
+          <span class="stat-dot"></span>
+          <span class="stat-label">Status</span>
+          <span class="stat-value">Open to work · FL / NC<br>Hybrid &amp; Remote</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: bio + contact -->
+    <div class="bio-col">
+
+      <div class="bio-block">
+        <h3>About Me</h3>
+        <p>I am a passionate GIS professional currently pursuing my Master's degree in Cartography and Geographic Information Sciences at the University of Wisconsin-Madison. With a strong foundation in geographic information systems and two bachelor's degrees from Michigan State University, I bring together technical expertise and creative problem-solving skills in my work.</p>
+        <p>My professional experience spans various aspects of GIS — from creating detailed project plan sets at Bono Consulting to designing complex visualizations at Primera Engineers. I'm particularly interested in the intersection of cartography, data visualization, and web-based mapping technologies.</p>
+        <p>When I'm not working with maps, you can find me exploring new technologies, contributing to open-source GIS projects, or cycling through Chicago's diverse neighborhoods — an experience that has deepened my appreciation for urban geography and spatial analysis.</p>
+      </div>
+
+      <div class="bio-block">
+        <h3>Contact &amp; Links</h3>
+        <div class="contact-links">
+          <a href="mailto:kalchikethan@gmail.com" class="btn btn-primary">Email Me</a>
+          <a href="https://www.linkedin.com/in/ethan-kalchik-1a6619196/" class="btn btn-outline" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="resume.html" class="btn btn-secondary">View Resume</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ────────────────────────────────────────────────────────────── -->
+<footer>Ethan Kalchik &mdash; GIS &amp; Spatial Analytics Portfolio</footer>
+
+</body>
+</html>
